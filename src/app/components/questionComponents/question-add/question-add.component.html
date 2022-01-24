@@ -1,0 +1,74 @@
+<h1 mat-dialog-title>Yeni Soru</h1>
+<mat-dialog-content class="mat-typography">
+
+
+<div class="mt-5 container">
+    
+    <form [formGroup]="questionAddForm">
+    <div class="row">
+
+
+        <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
+            <label for="titleL" class="form-label">Başlık</label>
+            <input type="text" class="form-control" id="titleL" formControlName="title" required>
+            
+        </div>
+
+        <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
+            <label for="bodyy" class="form-label">Açıklama</label>
+            <input type="text" class="form-control" id="bodyy" formControlName="body" required>
+            
+        </div>
+
+        
+        <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
+            
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Ders seçiniz</mat-label>
+                <mat-select class="w-100 h-100"  formControlName="lessonId">
+                    <mat-option  [value]="lesson.id" *ngFor="let lesson of lessons">
+                        {{lesson.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
+            <label for="valueLOne" class="form-label">1. Şık değeri</label>
+            <input type="text" class="form-control" id="valueLOne" [(ngModel)]="inputOptionValueOne" [ngModelOptions]="{standalone: true}" required>
+        </div>
+           
+        <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
+            <label for="valueLTwo" class="form-label">2. Şık değeri</label>
+            <input type="text" class="form-control" id="valueLTwo" [(ngModel)]="inputOptionValueTwo" [ngModelOptions]="{standalone: true}" required>
+        </div>
+
+        <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
+            <label for="valueLThree" class="form-label">3. Şık değeri</label>
+            <input type="text" class="form-control" id="valueLThree" [(ngModel)]="inputOptionValueThree" [ngModelOptions]="{standalone: true}" required>
+        </div>
+
+        <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
+            <label for="valueLFour" class="form-label">4. Şık değeri</label>
+            <input type="text" class="form-control" id="valueLFour" [(ngModel)]="inputOptionValueFour" [ngModelOptions]="{standalone: true}" required>
+        </div>
+
+        <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
+            <label for="valueLFive" class="form-label">5. Şık değeri</label>
+            <input type="text" class="form-control" id="valueLFive" [(ngModel)]="inputOptionValueFive" [ngModelOptions]="{standalone: true}" required>
+        </div>
+
+        <mat-dialog-actions align="end">
+            <div class="col-md-12 col-lg-12 col-sm-12 mt-5">
+                <div class="d-grid gap-2">
+                    <button mat-dialog-close (click)="add()" class="btn btn-primary" type="button">Ekle</button>
+                  </div>
+            </div>
+          </mat-dialog-actions>
+        
+         
+
+    </div>
+    </form>
+</div>
+</mat-dialog-content>

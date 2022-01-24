@@ -1,0 +1,54 @@
+<h1 mat-dialog-title>Yeni Soru</h1>
+<mat-dialog-content class="mat-typography">
+
+
+<div class="mt-5 container">
+    
+    <form [formGroup]="lessonTopicForm">
+    <div class="row">
+
+
+        <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
+            <label for="tt" class="form-label">Konu ismi</label>
+            <input type="text" class="form-control" id="tt" formControlName="title" required>            
+        </div>
+
+        
+        <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
+            <label for="tb" class="form-label">Konu açıklaması</label>
+            <input type="text" class="form-control" id="tb" formControlName="body" required>            
+        </div>
+
+
+        <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
+            <label for="tv" class="form-label">Konu videosu</label>
+            <input type="text" class="form-control" id="tv" formControlName="video" required>            
+        </div>
+
+        <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
+            
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Ders seçiniz</mat-label>
+                <mat-select class="w-100 h-100"  formControlName="lessonId">
+                    <mat-option  [value]="lesson.id" *ngFor="let lesson of lessons">
+                        {{lesson.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+
+        <mat-dialog-actions align="end">
+            <div class="col-md-12 col-lg-12 col-sm-12 mt-5">
+                <div class="d-grid gap-2">
+                    <button (click)="add()" class="btn btn-primary" type="button">Ekle</button>
+                  </div>
+            </div>
+          </mat-dialog-actions>
+        
+         
+
+    </div>
+    </form>
+</div>
+</mat-dialog-content>

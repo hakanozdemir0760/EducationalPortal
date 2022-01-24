@@ -1,0 +1,46 @@
+
+// Light
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+
+
+
+$Light-primary: mat.define-palette(mat.$indigo-palette);
+$Light-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$Light-warn: mat.define-palette(mat.$red-palette);
+
+$Light-theme: mat.define-light-theme((
+  color: (
+    primary: $Light-primary,
+    accent: $Light-accent,
+    warn: $Light-warn,
+  )
+));
+
+.light-mode{
+  @include mat.all-component-themes($Light-theme);
+}
+
+
+
+  // Dark
+
+  // @use '~@angular/material' as mat;
+  
+  $Dark-primary: mat.define-palette(mat.$blue-palette,A700);
+  $Dark-accent: mat.define-palette(mat.$yellow-palette);
+  $Dark-warn: mat.define-palette(mat.$red-palette);
+  
+  $Dark-theme: mat.define-dark-theme((
+    color: (
+      primary: $Dark-primary,
+      accent: $Dark-accent,
+      warn: $Dark-warn,
+    )
+  ));
+
+  .dark-mode{
+    @include mat.all-component-themes($Dark-theme);
+  }

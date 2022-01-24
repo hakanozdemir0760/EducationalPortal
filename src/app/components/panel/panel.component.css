@@ -1,0 +1,16 @@
+.ripple-container {
+    cursor: pointer;
+    text-align: center;
+  
+    width: 250px;
+    height: 250px;
+    line-height: 250px;
+  
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+  
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  

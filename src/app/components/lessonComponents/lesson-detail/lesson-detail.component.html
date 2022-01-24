@@ -1,0 +1,10 @@
+
+
+<mat-selection-list [multiple]="false">
+      <mat-list-option *ngFor="let lessonTopic of lessonTopics|lessonFilter:data" >
+        <div class="fs-4">{{lessonTopic.title}}</div>
+        <div mat-line class="fs-6">{{lessonTopic.body}}</div>
+      </mat-list-option>
+      
+    </mat-selection-list>
+

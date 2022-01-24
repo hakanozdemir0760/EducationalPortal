@@ -1,0 +1,41 @@
+<mat-nav-list class="w-100 h-100">
+  
+
+  <div *ngIf="user$ | async as User;else notUser">
+
+    <div mat-list-item class="text-center mb-3">    
+      Hoş Geldiniz {{User.displayName}}
+    </div>
+
+
+    <div mat-list-item>    
+      <button color="primary" routerLink="/panel" class="w-100 h-100" mat-stroked-button>
+        Panel
+      </button>
+    </div>
+
+    <div mat-list-item>
+      <button color="warn" class="w-100 h-100" (click)="logout()" mat-stroked-button >
+        Çıkış yap
+      </button>    
+    </div>
+
+  </div>
+
+  <ng-template #notUser>
+    <div mat-list-item>
+      <button routerLink="/account/login" class="w-100 h-100" mat-stroked-button>
+        Giriş yap
+      </button>
+    </div>
+    <div mat-list-item>
+      <button routerLink="/account/register" class="w-100 h-100"  mat-stroked-button >
+        Kayıt ol
+      </button>
+    </div>
+  </ng-template>
+  
+
+  
+    
+  </mat-nav-list>

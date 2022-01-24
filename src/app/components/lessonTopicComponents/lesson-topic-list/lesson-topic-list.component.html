@@ -1,0 +1,12 @@
+<div *ngIf="isDataNull" class="d-flex justify-content-center">
+  <mat-spinner></mat-spinner>
+</div>
+
+  
+  <mat-selection-list [multiple]="false" *ngIf="!isDataNull" >
+      <mat-list-option routerLink="/lesson-topic/add">Konu Ekle</mat-list-option>
+        <mat-list-option *ngFor="let lessonTopic of lessonTopics" >
+          {{lessonTopic.title}}
+        </mat-list-option>
+      </mat-selection-list>
+

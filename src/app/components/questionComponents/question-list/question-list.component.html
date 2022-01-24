@@ -1,0 +1,39 @@
+
+<div *ngIf="isDataNull" class="d-flex justify-content-center">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div class="d-flex justify-content-between" *ngIf="!isDataNull" >
+    <button mat-button color="primary" (click)="openQuestionAddDialog()">Yeni Soru Ekle</button>
+</div>
+<mat-card class="w-100 mb-3 mat-elevation-z24"  *ngFor="let question of questions">
+    <mat-card-header>
+      <mat-card-title>{{question.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+       {{question.body}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button color="warn" mat-button (click)="questionDelete(question)">Sil</button>
+        <form [formGroup]="forwardedReplieForm">
+
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Cevap seçiniz</mat-label>
+                <mat-select class="w-100 h-100"   formControlName="answer">
+                    <mat-option  [value]="option" *ngFor="let option of question.options">
+                        {{option}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="mt-5 d-grid gap-2">
+                <button class="btn btn-primary" (click)="forwardedReplieAdd(question.id)">Gönder</button>
+            </div>
+
+            
+
+    </form>
+
+    </mat-card-actions>
+  </mat-card>

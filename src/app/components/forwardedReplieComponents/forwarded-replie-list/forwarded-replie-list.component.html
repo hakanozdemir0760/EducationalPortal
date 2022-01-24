@@ -1,0 +1,30 @@
+<div *ngIf="isDataNull" class="d-flex justify-content-center">
+    <mat-spinner></mat-spinner>
+</div>
+
+<table class="table table-hover table-dark" *ngIf="!isDataNull">
+    <thead>
+        <tr>
+            <th>Soru</th>
+            <th>Kullanıcı Id</th>
+            <th>Kullanıcı Emaili</th>
+            <th>Verilen cevap</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let forwardedReplie of forwardedReplies">
+            <td>
+                {{forwardedReplie.questionId}}
+            </td>
+            <td>
+                {{forwardedReplie.userId}}
+            </td>
+            <td>
+                {{forwardedReplie.email}}
+            </td>
+            <td>
+                {{forwardedReplie.answer}}
+            </td>
+        </tr>
+    </tbody>
+</table>

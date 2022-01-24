@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "educationalportal-459a1": {
+      "hosting": {
+        "EducationalPortal": [
+          "educationalportal-459a1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "educationalportal-459a1"
+  }
+}

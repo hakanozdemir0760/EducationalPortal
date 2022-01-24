@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Yeni Soru</h1>
+<mat-dialog-content class="mat-typography">
+
+
+<div class="mt-5 container">
+    
+    <form [formGroup]="lessonAddForm">
+    <div class="row">
+
+
+        <div class="col-md-12 col-lg-12 col-sm-12 mt-3">
+            <label for="nma" class="form-label">Ders İsimi</label>
+            <input type="text" class="form-control" id="nma" formControlName="name" required>
+            
+        </div>
+
+
+        <mat-dialog-actions align="end">
+            <div class="col-md-12 col-lg-12 col-sm-12 mt-5">
+                <div class="d-grid gap-2">
+                    <button (click)="add()" class="btn btn-primary" type="button">Ekle</button>
+                  </div>
+            </div>
+          </mat-dialog-actions>
+        
+         
+
+    </div>
+    </form>
+</div>
+</mat-dialog-content>

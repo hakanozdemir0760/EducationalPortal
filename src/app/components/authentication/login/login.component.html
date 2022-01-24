@@ -1,0 +1,19 @@
+<h1 class="text-center mt-5 p-3 fs-1">Giriş yap</h1>
+<div class="d-flex justify-content-center p-3">    
+    
+        <form [formGroup]="loginForm" class="w-100">
+            <div class="mb-3 w-100">
+                <label for="FormControlInput1" class="form-label">E-Mail</label>
+                <input type="email" formControlName="email" autocomplete="email" class="form-control w-100" id="FormControlInput1" placeholder="email@gmail.com">
+            </div>
+
+            <div class="mb-3 w-100">
+                <label for="FormControlInput2" class="form-label">Şifre</label>
+                <input type="password" formControlName="password" autocomplete="current-password" class="form-control w-100" id="FormControlInput2" placeholder="şifre">
+            </div>
+            <div class="d-grid gap-2">
+                <button mat-stroked-button color="primary" (click)="login()">Giriş yap</button>
+            </div>
+        </form>
+
+</div>
